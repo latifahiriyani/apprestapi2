@@ -1,0 +1,35 @@
+{
+  "name": "apprestapi2",
+  "version": "1.0.0",
+  "description": "rest api 2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "ip": "^1.1.5",
+    "json-groupby": "^1.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "md5": "^2.2.1",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/latifahiriyani/apprestapi2.git"
+  },
+  "keywords": [
+    "restapi"
+  ],
+  "author": "latifahiriyani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/latifahiriyani/apprestapi2/issues"
+  },
+  "homepage": "https://github.com/latifahiriyani/apprestapi2#readme"
+}
