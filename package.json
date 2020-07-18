@@ -1,5 +1,5 @@
 {
-  "name": "apprestapi2",
+  "name": "apprestapiobat",
   "version": "1.0.0",
   "description": "rest api 2",
   "main": "index.js",
@@ -21,7 +21,7 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/latifahiriyani/apprestapi2.git"
+    "url": "git+https://github.com/latifahiriyani/uas.git"
   },
   "keywords": [
     "restapi"
@@ -29,7 +29,7 @@
   "author": "latifahiriyani",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/latifahiriyani/apprestapi2/issues"
+    "url": "https://github.com/latifahiriyani/uas/issues"
   },
-  "homepage": "https://github.com/latifahiriyani/apprestapi2#readme"
+  "homepage": "https://github.com/latifahiriyani/uas#readme"
 }
