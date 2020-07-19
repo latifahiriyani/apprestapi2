@@ -85,3 +85,16 @@ exports.hapusObat = function (req, res) {
             }
         });
 }
+
+
+
+//menampilkan semua data admin
+exports.tampilsemuaadmin = function (req, res) {
+    connection.query('SELECT * FROM admin', function (error, rows, fileds) {
+        if (error) {
+            console.log(error);
+        } else {
+            response.ok(rows, res)
+        }
+    });
+};
