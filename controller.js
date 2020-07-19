@@ -98,3 +98,16 @@ exports.tampilsemuaadmin = function (req, res) {
         }
     });
 };
+
+//menampilkan admin berdasarkan id
+exports.tampiladminberdasarkanid = function (req, res) {
+    let id = req.params.id;
+    connection.query('SELECT * FROM admin WHERE id_admin = ?', [id],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok(rows, res);
+            }
+        });
+};
