@@ -48,4 +48,9 @@ module.exports = function (app) {
         app.route('/ubahsupplier')
         .put(jsonku.ubahDataSupplier);
 
+        
+        app.route('/hapussupplier')
+        .delete(jsonku.hapusDataSupplier);
+
+
 }

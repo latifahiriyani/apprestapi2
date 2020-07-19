@@ -221,3 +221,16 @@ exports.ubahDataSupplier = function (req, res) {
             }
         });
 }
+
+//Menghapus data supplier berdasarkan id
+exports.hapusDataSupplier = function (req, res) {
+    var id = req.body.id_supplier;
+    connection.query('DELETE FROM supplier WHERE id_supplier=?', [id],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Berhasil Hapus Data!", res)
+            }
+        });
+}
