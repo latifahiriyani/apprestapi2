@@ -21,15 +21,15 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/latifahiriyani/uas.git"
+    "url": "git+https://github.com/latifahiriyani/apprestapi2.git"
   },
   "keywords": [
-    "restapi"
+    "nodejs"
   ],
   "author": "latifahiriyani",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/latifahiriyani/uas/issues"
+    "url": "https://github.com/latifahiriyani/apprestapi2/issues"
   },
-  "homepage": "https://github.com/latifahiriyani/uas#readme"
+  "homepage": "https://github.com/latifahiriyani/apprestapi2#readme"
 }
