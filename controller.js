@@ -160,3 +160,15 @@ exports.hapusDataAdmin = function (req, res) {
             }
         });
 }
+
+
+//menampilkan semua data supplier
+exports.tampilsemuasupplier = function (req, res) {
+    connection.query('SELECT * FROM supplier', function (error, rows, fileds) {
+        if (error) {
+            console.log(error);
+        } else {
+            response.ok(rows, res)
+        }
+    });
+};

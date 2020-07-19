@@ -36,4 +36,7 @@ module.exports = function (app) {
         app.route('/hapusadmin')
         .delete(jsonku.hapusDataAdmin);
 
+        app.route('/tampilsupplier')
+        .get(jsonku.tampilsemuasupplier);
+
 }
