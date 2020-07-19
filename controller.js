@@ -51,3 +51,24 @@ exports.tambahObat = function (req, res) {
             }
         });
 };
+
+
+//mengubah data berdasarkan id
+exports.ubahObat = function (req, res) {
+    var id = req.body.id_obat;
+    var kode_obat= req.body.kode_obat;
+    var nama_obat = req.body.nama_obat;
+    var jenis_obat = req.body.jenis_obat;
+    var harga = req.body.harga;
+	var jumlah_stok = req.body.jumlah_stok;
+	var tanggal_exp = req.body.tanggal_exp;
+
+    connection.query('UPDATE obat SET kode_obat=?, nama_obat=?, jenis_obat=?, harga=?, jumlah_stok=?, tanggal_exp=? WHERE id_obat=?', [kode_obat,nama_obat,jenis_obat,harga,jumlah_stok,tanggal_exp, id],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Berhasil Ubah Data!", res)
+            }
+        });
+}
