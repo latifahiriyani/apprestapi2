@@ -39,4 +39,7 @@ module.exports = function (app) {
         app.route('/tampilsupplier')
         .get(jsonku.tampilsemuasupplier);
 
+        app.route('/tampilsupplier/:id')
+        .get(jsonku.tampilsupplierberdasarkanid);
+
 }

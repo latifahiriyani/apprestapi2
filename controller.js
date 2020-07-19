@@ -172,3 +172,16 @@ exports.tampilsemuasupplier = function (req, res) {
         }
     });
 };
+
+//menampilkan supplier berdasarkan id
+exports.tampilsupplierberdasarkanid = function (req, res) {
+    let id = req.params.id;
+    connection.query('SELECT * FROM supplier WHERE id_supplier = ?', [id],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok(rows, res);
+            }
+        });
+};
