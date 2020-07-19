@@ -72,3 +72,16 @@ exports.ubahObat = function (req, res) {
             }
         });
 }
+
+//Menghapus data obat berdasarkan id
+exports.hapusObat = function (req, res) {
+    var id = req.body.id_obat;
+    connection.query('DELETE FROM obat WHERE id_obat=?', [id],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Berhasil Hapus Data!", res)
+            }
+        });
+}
