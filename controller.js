@@ -129,3 +129,21 @@ exports.tambahDataAdmin = function (req, res) {
             }
         });
 };
+
+//mengubah data admin berdasarkan id
+exports.ubahDataAdmin = function (req, res) {
+    var id = req.body.id_admin;
+    var kode_admin = req.body.kode_admin;
+    var nama_admin = req.body.nama_admin;
+    var alamat = req.body.alamat;
+    var no_tlp = req.body.no_tlp;
+
+    connection.query('UPDATE admin SET kode_admin=?, nama_admin=?, alamat=?, no_tlp=? WHERE id_admin=?', [kode_admin,nama_admin,alamat,no_tlp, id],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Berhasil Ubah Data!", res)
+            }
+        });
+}

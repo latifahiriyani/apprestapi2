@@ -30,4 +30,7 @@ module.exports = function (app) {
         app.route('/tambahadmin')
         .post(jsonku.tambahDataAdmin);
 
+        app.route('/ubahadmin')
+        .put(jsonku.ubahDataAdmin);
+
 }
