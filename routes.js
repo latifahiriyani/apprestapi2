@@ -27,4 +27,7 @@ module.exports = function (app) {
         app.route('/tampiladmin/:id')
         .get(jsonku.tampiladminberdasarkanid);
 
+        app.route('/tambahadmin')
+        .post(jsonku.tambahDataAdmin);
+
 }

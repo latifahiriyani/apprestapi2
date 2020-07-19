@@ -111,3 +111,21 @@ exports.tampiladminberdasarkanid = function (req, res) {
             }
         });
 };
+
+//menambahkan data admin
+exports.tambahDataAdmin = function (req, res) {
+    var kode_admin = req.body.kode_admin;
+    var nama_admin = req.body.nama_admin;
+    var alamat = req.body.alamat;
+    var no_tlp = req.body.no_tlp;
+
+    connection.query('INSERT INTO admin (kode_admin,nama_admin,alamat,no_tlp) VALUES(?,?,?,?)',
+        [kode_admin,nama_admin,alamat,no_tlp],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Berhasil Menambahkan Data!", res)
+            }
+        });
+};
