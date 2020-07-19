@@ -17,3 +17,16 @@ exports.tampilsemuaobat = function (req, res) {
         }
     });
 };
+
+//menampilkan  data obat berdasarkan id
+exports.tampilberdasarkanid= function (req, res) {
+    let id = req.params.id;
+    connection.query('SELECT * FROM obat WHERE id_obat = ?', [id],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok(rows, res);
+            }
+        });
+};
