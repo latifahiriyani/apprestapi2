@@ -203,3 +203,21 @@ exports.tambahDataSupplier = function (req, res) {
             }
         });
 };
+
+//mengubah data supplier berdasarkan id
+exports.ubahDataSupplier = function (req, res) {
+    var id = req.body.id_supplier;
+    var kode_supplier = req.body.kode_supplier;
+    var nama_supplier = req.body.nama_supplier;
+    var alamat = req.body.alamat;
+    var no_tlp = req.body.no_tlp;
+
+    connection.query('UPDATE supplier SET kode_supplier=?,nama_supplier=?, alamat=?, no_tlp=? WHERE id_supplier=?', [kode_supplier,nama_supplier,alamat,no_tlp, id],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Berhasil Ubah Data!", res)
+            }
+        });
+}

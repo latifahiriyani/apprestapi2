@@ -45,4 +45,7 @@ module.exports = function (app) {
         app.route('/tambahsupplier')
         .post(jsonku.tambahDataSupplier);
 
+        app.route('/ubahsupplier')
+        .put(jsonku.ubahDataSupplier);
+
 }
