@@ -33,4 +33,7 @@ module.exports = function (app) {
         app.route('/ubahadmin')
         .put(jsonku.ubahDataAdmin);
 
+        app.route('/hapusadmin')
+        .delete(jsonku.hapusDataAdmin);
+
 }

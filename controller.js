@@ -147,3 +147,16 @@ exports.ubahDataAdmin = function (req, res) {
             }
         });
 }
+
+//Menghapus data admin berdasarkan id
+exports.hapusDataAdmin = function (req, res) {
+    var id = req.body.id_admin;
+    connection.query('DELETE FROM admin WHERE id_admin=?', [id],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Berhasil Hapus Data!", res)
+            }
+        });
+}
