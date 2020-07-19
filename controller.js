@@ -185,3 +185,21 @@ exports.tampilsupplierberdasarkanid = function (req, res) {
             }
         });
 };
+
+//menambahkan data supplier
+exports.tambahDataSupplier = function (req, res) {
+    var kode_supplier = req.body.kode_supplier;
+    var nama_supplier = req.body.nama_supplier;
+    var alamat = req.body.alamat;
+    var no_tlp = req.body.no_tlp;
+
+    connection.query('INSERT INTO supplier (kode_supplier,nama_supplier,alamat,no_tlp) VALUES(?,?,?,?)',
+        [kode_supplier,nama_supplier,alamat,no_tlp],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Berhasil Menambahkan Data!", res)
+            }
+        });
+};

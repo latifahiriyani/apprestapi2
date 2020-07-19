@@ -42,4 +42,7 @@ module.exports = function (app) {
         app.route('/tampilsupplier/:id')
         .get(jsonku.tampilsupplierberdasarkanid);
 
+        app.route('/tambahsupplier')
+        .post(jsonku.tambahDataSupplier);
+
 }
