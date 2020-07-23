@@ -9,17 +9,47 @@ module.exports = function (app) {
    app.route('/tampil')
        .get(jsonku.tampilsemuaobat);
 
+       app.route('/tampilbarangmasuk')
+       .get(jsonku.tampilsemubarangmasuk);
+       
+       app.route('/tampilbarangkeluar')
+       .get(jsonku.tampilsemubarangkeluar);
+
        app.route('/tampil/:id')
        .get(jsonku.tampilberdasarkanid);
+
+       app.route('/tampilbarangmasuk/:id')
+       .get(jsonku.tampilbarangmasukberdasarkanid);
+       
+       app.route('/tampilbarangkeluar/:id')
+       .get(jsonku.tampilbarangkeluarberdasarkanid);
 
        app.route('/tambah')
        .post(jsonku.tambahObat);
 
+       app.route('/tambahbarangmasuk')
+       .post(jsonku.tambahDataBarangMasuk);
+
+       app.route('/tambahbarangkeluar')
+       .post(jsonku.tambahDataBarangKeluar);
+
        app.route('/ubah')
        .put(jsonku.ubahObat);
 
+       app.route('/ubahbarangmasuk')
+       .put(jsonku.ubahDataBarangMasuk);
+
+       app.route('/ubahbarangkeluar')
+       .put(jsonku.ubahDataBarangKeluar);
+
        app.route('/hapus')
         .delete(jsonku.hapusObat);
+
+        app.route('/hapusbarangmasuk')
+        .delete(jsonku.hapusDataBarangMasuk);
+
+        app.route('/hapusbarangkeluar')
+        .delete(jsonku.hapusDataBarangKeluar);
 
         app.route('/tampiladmin')
         .get(jsonku.tampilsemuaadmin);

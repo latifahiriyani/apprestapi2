@@ -239,3 +239,158 @@ exports.hapusDataSupplier = function (req, res) {
             }
         });
 }
+
+
+//menampilkan semua data barang masuk
+exports.tampilsemubarangmasuk = function (req, res) {
+    connection.query('SELECT * FROM barang_masuk', function (error, rows, fileds) {
+        if (error) {
+            console.log(error);
+        } else {
+            response.ok(rows, res)
+        }
+    });
+};
+
+//menampilkan semua data barang keluar
+exports.tampilsemubarangkeluar = function (req, res) {
+    connection.query('SELECT * FROM barang_keluar', function (error, rows, fileds) {
+        if (error) {
+            console.log(error);
+        } else {
+            response.ok(rows, res)
+        }
+    });
+};
+
+//menampilkan barang masuk berdasarkan id
+exports.tampilbarangmasukberdasarkanid = function (req, res) {
+    let id = req.params.id;
+    connection.query('SELECT * FROM barang_masuk WHERE id_barang_masuk = ?', [id],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok(rows, res);
+            }
+        });
+};
+
+//menampilkan barang keluar berdasarkan id
+exports.tampilbarangkeluarberdasarkanid = function (req, res) {
+    let id = req.params.id;
+    connection.query('SELECT * FROM barang_keluar WHERE id_barang_keluar = ?', [id],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok(rows, res);
+            }
+        });
+};
+
+//menambahkan data barang masuk
+exports.tambahDataBarangMasuk = function (req, res) {
+    var kode_barang_masuk = req.body.kode_barang_masuk;
+    var tanggal_barang_masuk = req.body.tanggal_barang_masuk;
+    var kode_obat = req.body.kode_obat;
+    var nama_obat = req.body.nama_obat;
+    var harga = req.body.harga;
+    var jumlah = req.body.jumlah;
+
+    connection.query('INSERT INTO barang_masuk (kode_barang_masuk,tanggal_barang_masuk,kode_obat,nama_obat,harga,jumlah) VALUES(?,?,?,?,?,?)',
+        [kode_barang_masuk,tanggal_barang_masuk,kode_obat,nama_obat,harga,jumlah],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Berhasil Menambahkan Data!", res)
+            }
+        });
+};
+
+//menambahkan data barang keluar
+exports.tambahDataBarangKeluar = function (req, res) {
+    var kode_barang_keluar = req.body.kode_barang_keluar;
+    var tanggal_barang_keluar = req.body.tanggal_barang_keluar;
+    var kode_obat = req.body.kode_obat;
+    var nama_obat = req.body.nama_obat;
+    var harga = req.body.harga;
+    var jumlah = req.body.jumlah;
+
+    connection.query('INSERT INTO barang_keluar (kode_barang_keluar,tanggal_barang_keluar,kode_obat,nama_obat,harga,jumlah) VALUES(?,?,?,?,?,?)',
+        [kode_barang_keluar,tanggal_barang_keluar,kode_obat,nama_obat,harga,jumlah],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Berhasil Menambahkan Data!", res)
+            }
+        });
+};
+
+//mengubah data barang masuk berdasarkan id
+exports.ubahDataBarangMasuk = function (req, res) {
+    var id = req.body.id_barang_masuk;
+    var kode_barang_masuk = req.body.kode_barang_masuk;
+    var tanggal_barang_masuk = req.body.tanggal_barang_masuk;
+    var kode_obat = req.body.kode_obat;
+    var nama_obat = req.body.nama_obat;
+    var harga = req.body.harga;
+    var jumlah = req.body.jumlah;
+
+    connection.query('UPDATE barang_masuk SET kode_barang_masuk=?,tanggal_barang_masuk=?, kode_obat=?, nama_obat=?, harga=?, jumlah=? WHERE id_barang_masuk=?', [kode_barang_masuk,tanggal_barang_masuk,kode_obat,nama_obat,harga,jumlah, id],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Berhasil Ubah Data!", res)
+            }
+        });
+}
+
+//mengubah data barang keluar berdasarkan id
+exports.ubahDataBarangKeluar = function (req, res) {
+    var id = req.body.id_barang_keluar;
+    var kode_barang_keluar = req.body.kode_barang_keluar;
+    var tanggal_barang_keluar = req.body.tanggal_barang_keluar;
+    var kode_obat = req.body.kode_obat;
+    var nama_obat = req.body.nama_obat;
+    var harga = req.body.harga;
+    var jumlah = req.body.jumlah;
+
+    connection.query('UPDATE barang_keluar SET kode_barang_keluar=?,tanggal_barang_keluar=?, kode_obat=?, nama_obat=?, harga=?, jumlah=? WHERE id_barang_keluar=?', [kode_barang_keluar,tanggal_barang_keluar,kode_obat,nama_obat,harga,jumlah, id],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Berhasil Ubah Data!", res)
+            }
+        });
+}
+
+//Menghapus data barang masuk berdasarkan id
+exports.hapusDataBarangMasuk = function (req, res) {
+    var id = req.body.id_barang_masuk;
+    connection.query('DELETE FROM barang_masuk WHERE id_barang_masuk=?', [id],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Berhasil Hapus Data!", res)
+            }
+        });
+}
+
+//Menghapus data barang keluar berdasarkan id
+exports.hapusDataBarangKeluar = function (req, res) {
+    var id = req.body.id_barang_keluar;
+    connection.query('DELETE FROM barang_keluar WHERE id_barang_keluar=?', [id],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Berhasil Hapus Data!", res)
+            }
+        });
+}
