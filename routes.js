@@ -8,7 +8,7 @@ module.exports = function (app) {
 
    app.route('/tampil')
        .get(jsonku.tampilsemuaobat);
-
+//tampil barang masuk
        app.route('/tampilbarangmasuk')
        .get(jsonku.tampilsemubarangmasuk);
        
